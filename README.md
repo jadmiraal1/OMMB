@@ -1,6 +1,7 @@
 # Options Market Making Bot (OMMB)
 
 #Setup
+
 Create environment with Python 3.11
 conda create -n options_trading python=3.11 -y
 
