@@ -1,0 +1,124 @@
+# Quickstart version
+
+# Environment files
+.env
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data files (optional - might want to track some)
+data/*.csv
+data/*.json
+data/raw/
+
+# Config files with secrets
+config/secrets.py
+config/credentials.py
+EOF
+
+
+# Complex version
+'''
+# =============================================================================
+# OPTIONS MARKET MAKER CONFIGURATION
+# Copy this file to .env and customize your settings
+# =============================================================================
+
+# ENVIRONMENT SETTINGS
+ENVIRONMENT=development  # development, testing, production
+PAPER_TRADING=true      # true for paper trading, false for live trading
+
+# IBKR CONNECTION
+IBKR_HOST=127.0.0.1
+IBKR_PAPER_PORT=7497    # TWS paper trading port
+IBKR_LIVE_PORT=7496     # TWS live trading port  
+IBKR_CLIENT_ID=1
+IBKR_TIMEOUT=10
+
+# DATABASE CONFIGURATION
+DATABASE_URL=sqlite:///data/trading_data.db
+DB_ECHO=false           # Set to true for SQL query logging
+DB_POOL_SIZE=5
+DB_MAX_OVERFLOW=10
+
+# TRADING PARAMETERS
+# Position Limits
+MAX_POSITION_PER_OPTION=10
+MAX_PORTFOLIO_DELTA=100
+MAX_PORTFOLIO_GAMMA=5.0
+MAX_PORTFOLIO_VEGA=500
+
+# Risk Management
+MAX_DAILY_LOSS_PCT=0.02     # 2% max daily loss
+MAX_SINGLE_SYMBOL_PCT=0.30  # 30% max in single symbol
+STOP_LOSS_PCT=0.05          # 5% stop loss
+
+# Market Making Strategy
+MIN_SPREAD=0.05
+MAX_SPREAD=0.50
+INVENTORY_PENALTY=0.01
+VOLATILITY_ADJUSTMENT=0.02
+
+# Trading Universe
+TARGET_SYMBOLS=AAPL,SPY,QQQ,TSLA,NVDA
+MIN_VOLUME=100
+MIN_OPEN_INTEREST=50
+MIN_DTE=7                   # Minimum days to expiration
+MAX_DTE=45                  # Maximum days to expiration
+
+# Market Data
+RISK_FREE_RATE=0.05
+VOLATILITY_WINDOW=30
+
+# MONITORING AND LOGGING
+LOG_LEVEL=INFO              # DEBUG, INFO, WARNING, ERROR
+MAX_LOG_FILES=30
+LOG_FILE_SIZE_MB=10
+
+# Dashboard
+DASHBOARD_HOST=127.0.0.1
+DASHBOARD_PORT=8050
+DASHBOARD_DEBUG=false
+
+# Alerts
+ALERT_PORTFOLIO_DELTA=80
+ALERT_DAILY_LOSS=0.015      # Alert at 1.5% loss
+ALERT_SYSTEM_ERROR_COUNT=5
+
+# BACKTESTING
+COMMISSION_PER_CONTRACT=0.65
+SLIPPAGE_BPS=2.0            # 2 basis points slippage
+INITIAL_CAPITAL=100000
+BENCHMARK_SYMBOL=SPY
+RISK_FREE_RATE_SOURCE=^TNX
+EOF
+'''
