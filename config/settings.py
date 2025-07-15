@@ -1,3 +1,4 @@
+# Quickstart version
 import os
 from dotenv import load_dotenv
 
@@ -10,7 +11,6 @@ class Config:
     IBKR_PORT = int(os.getenv('IBKR_PORT', 7497))
     IBKR_CLIENT_ID = int(os.getenv('IBKR_CLIENT_ID', 1))
 
-    '''
     # Database
     DATABASE_URL = os.getenv('DATABASE_URL', 'sqlite:///data/trading_data.db')
     
@@ -22,8 +22,9 @@ class Config:
     # Environment
     ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
     DEBUG = ENVIRONMENT == 'development'
-    '''
 
+
+# Complex version
 '''
 import os
 from typing import Dict, List, Optional
